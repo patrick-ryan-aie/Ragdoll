@@ -1,22 +1,22 @@
 print "Starting maya loading and fbx conversion \n";
 			
-if (`file -q -exists "C:/Users/student/DOCUME~1/GitHub/Ragdoll/Assets/CHARAC~1/ANIMER~1/RANGER~1.MA"`)
+if (`file -q -exists "C:/Users/devens.AIE/DOCUME~1/GitHub/Ragdoll/Assets/CHARAC~1/ANIMER~1/RANGER~1.MA"`)
 {
-	file -o "C:/Users/student/DOCUME~1/GitHub/Ragdoll/Assets/CHARAC~1/ANIMER~1/RANGER~1.MA";
+	file -o "C:/Users/devens.AIE/DOCUME~1/GitHub/Ragdoll/Assets/CHARAC~1/ANIMER~1/RANGER~1.MA";
 	FBXExportEmbeddedTextures -v false;
 	// FBXExportHardEdges -v true;
 	FBXExportApplyConstantKeyReducer -v false;
 	FBXExportShowUI -v false;
 
 	print "Before fbx export\n";
-	FBXExport -f "C:/Users/student/DOCUME~1/GitHub/Ragdoll/Temp/ExportedFBXFile.fbx";
+	FBXExport -f "C:/Users/devens.AIE/DOCUME~1/GitHub/Ragdoll/Temp/ExportedFBXFile.fbx";
 	print "after fbx export\n";
 }
 else
 	print "Could not open Maya file.";
 
-system ("del \"C:\\Users\\student\\DOCUME~1\\GitHub\\Ragdoll\\Temp\\CommandPipe\"");
+system ("del \"C:\\Users\\devens.AIE\\DOCUME~1\\GitHub\\Ragdoll\\Temp\\CommandPipe\"");
 
-$donepipeKill = `fopen "C:/Users/student/DOCUME~1/GitHub/Ragdoll/Temp/SyncPipeKill" "w"`;
+$donepipeKill = `fopen "C:/Users/devens.AIE/DOCUME~1/GitHub/Ragdoll/Temp/SyncPipeKill" "w"`;
 fwrite $donepipeKill "Done";
 fclose $donepipeKill;
