@@ -6,9 +6,9 @@ public class AttackScript : MonoBehaviour {
 
 	ShootScript shoot;
 	public AttackTypes attackType;
-	GameObject horAttack;
-	GameObject vertAttack;
-	GameObject straightAttack;
+	public GameObject horAttack;
+	public GameObject vertAttack;
+	public GameObject straightAttack;
 
 	float disableTime = 0.0f;
 
@@ -25,9 +25,9 @@ public class AttackScript : MonoBehaviour {
 			disableTime -= Time.deltaTime;
 			if(disableTime <= 0)
 			{
-				horAttack.SetActive = false;
-				vertAttack.SetActive = false;
-				straightAttack.SetActive = false;
+				horAttack.SetActive(false);
+				vertAttack.SetActive(false);
+				straightAttack.SetActive(false);
 			}
 		}
 
@@ -55,9 +55,9 @@ public class AttackScript : MonoBehaviour {
 
 	void HorizontalAttack()
 	{
-		horAttack.SetActive = true;
-		vertAttack.SetActive = false;
-		straightAttack.SetActive = false;
+		vertAttack.SetActive(false);
+		straightAttack.SetActive(false);
+		horAttack.SetActive(true);
 
 		float horizontalAttackTime = 1.5f;
 		disableTime = horizontalAttackTime;
@@ -65,9 +65,9 @@ public class AttackScript : MonoBehaviour {
 
 	void VerticleAttack()
 	{
-		horAttack.SetActive = false;
-		vertAttack.SetActive = true;
-		straightAttack.SetActive = false;
+		horAttack.SetActive(false);
+		straightAttack.SetActive(false);
+		vertAttack.SetActive(true);
 		
 		float verticleAttackTime = 1.5f;
 		disableTime = verticleAttackTime;
@@ -75,11 +75,11 @@ public class AttackScript : MonoBehaviour {
 
 	void StraightAttack()
 	{
-		horAttack.SetActive = false;
-		vertAttack.SetActive = false;
-		straightAttack.SetActive = true;
+		horAttack.SetActive(false);
+		vertAttack.SetActive(false);
+		straightAttack.SetActive(true);
 		
 		float straightAttackTime = 1.5f;
-		disableTime = straightlAttackTime;
+		disableTime = straightAttackTime;
 	}
 }
