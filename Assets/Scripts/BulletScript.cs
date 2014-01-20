@@ -27,8 +27,10 @@ public class BulletScript : MonoBehaviour {
 		if(c.tag == "Enemy")
 		{
 			EnemyInjuryScript hitInjury = c.transform.gameObject.GetComponent<EnemyInjuryScript>();
+			hitInjury.SendMessage("SetImpact", gameObject);
 			hitInjury.SendMessage("RecieveInjury", attackType);
-			Destroy(gameObject);
+
+			//Destroy(gameObject);
 		}
 	}
 

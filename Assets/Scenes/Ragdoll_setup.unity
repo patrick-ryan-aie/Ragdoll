@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 586934}
   - 95: {fileID: 586935}
+  - 114: {fileID: 586936}
   m_Layer: 0
   m_Name: ranger_ragdoll
   m_TagString: Untagged
@@ -120,6 +121,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &586936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 11f9ebb49901c27449bcbb5fb6514fb8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1391280193}
+  m_GameObject: {fileID: 586933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c129e8a69c919bd41acc3cda2fa6bc0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5048450
 GameObject:
   m_ObjectHideFlags: 0

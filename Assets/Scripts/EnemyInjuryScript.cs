@@ -7,6 +7,7 @@ public class EnemyInjuryScript : MonoBehaviour {
 	InjuryTypes injuryType;
 	public bool hasRagdoll;
 	public GameObject ragdoll;
+	GameObject hitByBullet;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +16,11 @@ public class EnemyInjuryScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void SetImpact(GameObject bullet)
+	{
+		hitByBullet = bullet;
 	}
 
 	void RecieveInjury(AttackTypes typeOfAttack)
@@ -36,27 +42,11 @@ public class EnemyInjuryScript : MonoBehaviour {
 		}
 		else
 		{
-
 			GameObject child = (GameObject) Instantiate(ragdoll, transform.position, transform.rotation);
-			//child.transform.parent = transform;
 
-			//child.SetActive(true);
-			GameObject root;
-			/*if(typeOfAttack == AttackTypes.Straight)
-			{
-				foreach(Transform c in transform)
-				{
-					if(c.name == "ranger_Hips")
-					{
-						Debug.Log("found hips");
-						root = c.gameObject;
-						root.rigidbody.AddForce(-transform.forward * 10);
-					}
-				}*/
-			root = child.transform.FindChild("ranger_Reference/ranger_Hips").gameObject;
-			root.rigidbody.AddForce(-transform.forward * 1000);
 
-			//}
+			RigidBodyScript ragdollscript = child.GetComponent<RigidBodyScript>();
+			ragdollscript.SendMessage("SetImpact", hitByBullet);
 
 			gameObject.SetActive(false);
 		}
