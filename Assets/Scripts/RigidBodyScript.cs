@@ -35,8 +35,8 @@ public class RigidBodyScript : MonoBehaviour {
 					}
 				}*/
 		root = transform.FindChild("ranger_Reference/ranger_Hips").gameObject;
-		//root.rigidbody.AddForce(-transform.forward * 1000);
-		root.rigidbody.AddForceAtPosition(hitByBullet.transform.forward, hitByBullet.transform.position, ForceMode.Acceleration);
+		root.rigidbody.AddForce(hitByBullet.transform.forward * 10000,ForceMode.Acceleration);
+		//root.rigidbody.AddForceAtPosition(hitByBullet.transform.forward, hitByBullet.transform.position, ForceMode.Acceleration);
 		Debug.Log ("should");
 		Destroy(hitByBullet);
 	}
