@@ -130,9 +130,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 586933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c129e8a69c919bd41acc3cda2fa6bc0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 17bb9463545faea4587008460e71ad0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactMultiplier: 50
 --- !u!1 &5048450
 GameObject:
   m_ObjectHideFlags: 0
@@ -9302,6 +9303,7 @@ GameObject:
   - 114: {fileID: 1401718645}
   - 114: {fileID: 1401718644}
   - 114: {fileID: 1401718643}
+  - 114: {fileID: 1401718647}
   m_Layer: 0
   m_Name: FPPlayerPrefab
   m_TagString: Untagged
@@ -9424,6 +9426,20 @@ CharacterController:
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1401718647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1401718641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4d56ade109b4249b268da662741029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetLevel: 278
+  spawnEnemy: 277
+  enemyPrefab: {fileID: 100124, guid: e1c79974e68f51b4e9661cc42f22e334, type: 2}
 --- !u!1 &1419146444
 GameObject:
   m_ObjectHideFlags: 0

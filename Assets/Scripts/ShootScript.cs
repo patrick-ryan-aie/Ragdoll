@@ -20,6 +20,7 @@ public class ShootScript : MonoBehaviour {
 			Debug.Log(attackType);
 			GameObject bullet = (GameObject) Instantiate(bulletPrefab, transform.position, transform.rotation);
 			BulletScript bs = bullet.GetComponent<BulletScript>();
+			bs.rigidbody.AddForce(transform.forward * 5000, ForceMode.Acceleration);
 			bs.attackType = attackType;
 		}
 	}

@@ -14,7 +14,7 @@ public class BulletScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = transform.position + transform.forward * moveSpeed * Time.deltaTime;
+		//transform.position = transform.position + transform.forward * moveSpeed * Time.deltaTime;
 		if(Vector3.Distance(transform.position, startingPos) > 20)
 		{
 			Destroy(gameObject);

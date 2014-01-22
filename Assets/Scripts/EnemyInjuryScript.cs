@@ -45,10 +45,11 @@ public class EnemyInjuryScript : MonoBehaviour {
 			GameObject child = (GameObject) Instantiate(ragdoll, transform.position, transform.rotation);
 
 
-			RigidBodyScript ragdollscript = child.GetComponent<RigidBodyScript>();
+			RagDollScript ragdollscript = child.GetComponent<RagDollScript>();
 			ragdollscript.SendMessage("SetImpact", hitByBullet);
 
 			gameObject.SetActive(false);
+			Destroy(gameObject);
 		}
 
 	}
