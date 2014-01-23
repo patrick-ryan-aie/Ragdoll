@@ -5161,7 +5161,7 @@ GameObject:
   - 54: {fileID: 769468943}
   - 144: {fileID: 769468942}
   m_Layer: 0
-  m_Name: ranger_LeftUpLeg
+  m_Name: w
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5173,8 +5173,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400142, guid: 11f9ebb49901c27449bcbb5fb6514fb8, type: 2}
   m_PrefabInternal: {fileID: 1391280193}
   m_GameObject: {fileID: 769468940}
-  m_LocalRotation: {x: -.0389830172, y: -.35197255, z: .0640156344, w: .933004677}
-  m_LocalPosition: {x: -.184628561, y: -.129923761, z: 2.85474364e-08}
+  m_LocalRotation: {x: .0776149333, y: -.354506403, z: .000651127426, w: .931826591}
+  m_LocalPosition: {x: -.151606575, y: -.108853765, z: .00189858314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1553360662}
@@ -5190,7 +5190,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -.184628561, y: -.129923761, z: 2.85474364e-08}
+  m_ConnectedAnchor: {x: -.151606575, y: -.108853765, z: .00189858314}
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_LowTwistLimit:
     limit: -20
@@ -9983,8 +9983,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400244, guid: 11f9ebb49901c27449bcbb5fb6514fb8, type: 2}
   m_PrefabInternal: {fileID: 1391280193}
   m_GameObject: {fileID: 1553360661}
-  m_LocalRotation: {x: .0394350104, y: .211419314, z: .000342089508, w: .976599574}
-  m_LocalPosition: {x: -.163806632, y: -.915410995, z: -2.44263134e-08}
+  m_LocalRotation: {x: .276330888, y: .180791959, z: -.132286295, w: .934588671}
+  m_LocalPosition: {x: -.134178579, y: -.977295876, z: .0389693789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 58967963}
@@ -10000,7 +10000,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -.163806632, y: -.915411055, z: -3.69474051e-08}
+  m_ConnectedAnchor: {x: -.134178609, y: -.977295935, z: .0389693864}
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_LowTwistLimit:
     limit: -80
