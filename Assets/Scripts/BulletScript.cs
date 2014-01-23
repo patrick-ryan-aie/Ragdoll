@@ -14,7 +14,7 @@ public class BulletScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = transform.position + transform.forward * moveSpeed * Time.deltaTime;
+		//transform.position = transform.position + transform.forward * moveSpeed * Time.deltaTime;
 		if(Vector3.Distance(transform.position, startingPos) > 20)
 		{
 			Destroy(gameObject);
@@ -27,8 +27,10 @@ public class BulletScript : MonoBehaviour {
 		if(c.tag == "Enemy")
 		{
 			EnemyInjuryScript hitInjury = c.transform.gameObject.GetComponent<EnemyInjuryScript>();
+			hitInjury.SendMessage("SetImpact", gameObject);
 			hitInjury.SendMessage("RecieveInjury", attackType);
-			Destroy(gameObject);
+
+			//Destroy(gameObject);
 		}
 	}
 

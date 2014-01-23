@@ -5,10 +5,12 @@ public class EnemyInjuryScript : MonoBehaviour {
 
 	enum InjuryTypes {Straight, Verticle, Horizontal};
 	InjuryTypes injuryType;
+	public bool hasRagdoll;
+	public GameObject ragdoll;
+	GameObject hitByBullet;
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -16,19 +18,38 @@ public class EnemyInjuryScript : MonoBehaviour {
 	
 	}
 
+	void SetImpact(GameObject bullet)
+	{
+		hitByBullet = bullet;
+	}
+
 	void RecieveInjury(AttackTypes typeOfAttack)
 	{
-		if(typeOfAttack == AttackTypes.Straight)
+		if(!hasRagdoll)
 		{
-			renderer.material.color = Color.red;
+			if(typeOfAttack == AttackTypes.Straight)
+			{
+				renderer.material.color = Color.red;
+			}
+			if(typeOfAttack == AttackTypes.Horizontal)
+			{
+				renderer.material.color = Color.blue;
+			}
+			if(typeOfAttack == AttackTypes.Verticle)
+			{
+				renderer.material.color = Color.green;
+			}
 		}
-		if(typeOfAttack == AttackTypes.Horizontal)
+		else
 		{
-			renderer.material.color = Color.blue;
-		}
-		if(typeOfAttack == AttackTypes.Verticle)
-		{
-			renderer.material.color = Color.green;
+			GameObject child = (GameObject) Instantiate(ragdoll, transform.position, transform.rotation);
+
+
+			RagDollScript ragdollscript = child.GetComponent<RagDollScript>();
+			ragdollscript.SendMessage("SetImpact", hitByBullet);
+
+			gameObject.SetActive(false);
+			Destroy(gameObject);
 		}
 
 	}
