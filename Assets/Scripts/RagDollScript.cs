@@ -4,7 +4,7 @@ using System.Collections;
 public class RagDollScript : MonoBehaviour {
 
 	GameObject hitByBullet;
-	public int impactMultiplier = 10;
+	public int impactMultiplier = 1000;
 
 	/*// Use this for initialization
 	void Start () {
@@ -19,6 +19,8 @@ public class RagDollScript : MonoBehaviour {
 	void SetImpact(GameObject bullet)
 	{
 		hitByBullet = bullet;
+		BulletScript bs = hitByBullet.GetComponent<BulletScript>();
+
 		//GameObject child = (GameObject) Instantiate(ragdoll, transform.position, transform.rotation);
 		//child.transform.parent = transform;
 		
@@ -37,8 +39,29 @@ public class RagDollScript : MonoBehaviour {
 				}*/
 		root = transform.FindChild("ranger_Reference/ranger_Hips").gameObject;
 		//root.rigidbody.AddForce(hitByBullet.transform.forward * 1000,ForceMode.Acceleration);
-		root.rigidbody.AddForce(/*hitByBullet.transform.forward* */hitByBullet.rigidbody.velocity * impactMultiplier,ForceMode.Acceleration);
-		Debug.Log(hitByBullet.rigidbody.velocity);
+
+
+		switch(bs.attackType)
+		{
+		case AttackTypes.Straight :
+			root.rigidbody.AddForce(/*hitByBullet.transform.forward* */hitByBullet.transform.forward * impactMultiplier,ForceMode.Acceleration);
+			break;
+		case AttackTypes.Horizontal :
+			root.rigidbody.AddForce(/*hitByBullet.transform.forward* */hitByBullet.transform.right * impactMultiplier,ForceMode.Acceleration);
+			break;
+		case AttackTypes.Verticle :
+			root.rigidbody.AddForce(/*hitByBullet.transform.forward* */hitByBullet.transform.up * impactMultiplier,ForceMode.Acceleration);
+
+			break;
+		default:
+			root.rigidbody.AddForce(/*hitByBullet.transform.forward* */hitByBullet.transform.forward * impactMultiplier,ForceMode.Acceleration);
+			break;
+		}
+
+
+
+
+		//Debug.Log(hitByBullet.rigidbody.velocity);
 		//root.rigidbody.AddForceAtPosition(hitByBullet.transform.forward, hitByBullet.transform.position, ForceMode.Acceleration);
 		Destroy(hitByBullet);
 	}

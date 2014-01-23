@@ -5708,7 +5708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bb9463545faea4587008460e71ad0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactMultiplier: 50
+  impactMultiplier: 2500
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

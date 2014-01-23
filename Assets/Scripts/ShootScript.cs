@@ -17,7 +17,7 @@ public class ShootScript : MonoBehaviour {
 	{
 		if(Input.GetMouseButtonDown(0))
 		{
-			Debug.Log(attackType);
+			//Debug.Log(attackType);
 			GameObject bullet = (GameObject) Instantiate(bulletPrefab, transform.position, transform.rotation);
 			BulletScript bs = bullet.GetComponent<BulletScript>();
 			bs.rigidbody.AddForce(transform.forward * 5000, ForceMode.Acceleration);

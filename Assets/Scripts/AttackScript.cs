@@ -10,6 +10,11 @@ public class AttackScript : MonoBehaviour {
 	public GameObject vertAttack;
 	public GameObject straightAttack;
 
+	public KeyCode setStraightAttackKey;
+	public KeyCode setVerticalAttackKey;
+	public KeyCode setHorizontalAttackKey;
+
+
 	float disableTime = 0.0f;
 
 	// Use this for initialization
@@ -32,23 +37,23 @@ public class AttackScript : MonoBehaviour {
 		}
 
 
-		if(Input.GetKeyDown(KeyCode.Alpha1))
+		if(Input.GetKeyDown(setStraightAttackKey))
 		{
 			attackType = AttackTypes.Straight;
 			shoot.attackType = attackType;
-			StraightAttack();
+			//StraightAttack();
 		}
-		if(Input.GetKeyDown(KeyCode.Alpha2))
+		if(Input.GetKeyDown(setHorizontalAttackKey))
 		{
 			attackType = AttackTypes.Horizontal;
 			shoot.attackType = attackType;
-			HorizontalAttack();
+			//HorizontalAttack();
 		}
-		if(Input.GetKeyDown(KeyCode.Alpha3))
+		if(Input.GetKeyDown(setVerticalAttackKey))
 		{
 			attackType = AttackTypes.Verticle;
 			shoot.attackType = attackType;
-			VerticleAttack();
+			//VerticleAttack();
 		}
 	
 	}
